@@ -1,1 +1,233 @@
-测试
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>藏宝海湾 魔兽世界 60级 经典旧世 地球时代 原汁原味 香草魔兽 1.12版本</title>
+<meta charset="utf-8" />
+<meta name="description" content="藏宝海湾怀旧服 | 魔兽世界私服 | 魔兽私服 | wowsf | 仿官方魔兽 | 新开私服 | 最新私服 | wow私服 | 电信魔兽 | 网通魔兽" />
+<meta name="keywords" content="藏宝海湾怀旧服 | 魔兽世界私服 | 魔兽私服 | wowsf | 仿官方魔兽 | 新开私服 | 最新私服 | wow私服 | 电信魔兽 | 网通魔兽" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="icon" href="css/wow.png">
+<link rel="stylesheet" href="css/index.css">
+</head>
+<body  scroll="no" onselectstart="return false;" oncontextmenu = "return false" onkeydown="if(event.keyCode==27 || event.keyCode==123) return false;" onload="changeImg()">
+<nav><div class="menu-icon"><span></span></div></nav>
+<div id="video-container"><div class="video-overlay"></div><video autoplay loop muted><source src="loop.mp4" type="video/mp4" /></video></div>
+<!-- QQ群 -->
+<div class="popup-icon"><a href="https://shang.qq.com/wpa/qunwpa?idkey=fac3bb2e230e3f64d79f856c6eb9502e5b6f57f0617802d52b96afef0d4874ff" target="_blank"><img src="css/contact-icon.png"></a></div>  
+
+<!-- 注册帐号 -->
+<div id="Modal_1" class="modal">
+<div class="modal-content">
+<div class="modal-header">
+<h3 class="header-title">注册帐号</h3>
+<div class="close-btn"><img src="css/close_contact.png"></div>
+<h2>电子邮件是找回密码的唯一凭证,请正确填写!</h2>
+</div>
+<div class="modal-body">
+<div class="col-md col-md-offset">
+<form method="post" action="Result.php" onsubmit="return check()">
+<div class="row">
+<div class="col-md-12">
+<fieldset>
+<input onkeyup="value=value.replace(/[\W]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" type="text" class="form-control" placeholder="用户账号" name="login" maxlength="16" required />
+</fieldset>
+</div>
+<div class="col-md-12">
+<fieldset>
+<input type="text" class="form-control" placeholder="电子邮件" name="email" maxlength="28" required />
+</fieldset>
+</div>
+<div class="col-md-12">
+<fieldset>
+<input type="password" class="form-control" placeholder="输入密码" name="pass" maxlength="28" required />
+</fieldset>
+</div>
+<div class="col-md-12">
+<fieldset>
+<input type="password" class="form-control" placeholder="确认密码" name="pass2" maxlength="28" required />
+</fieldset>
+</div>
+<div class="col-md-13">
+<fieldset>
+<input type="text" id="vcode" class="form-control" placeholder="验证码" maxlength="5" required />&nbsp;&nbsp;<span id="code" title="换一张"></span>
+</fieldset>
+</div>
+<div class="col-md-12">
+<input type="submit" name="sent" class="primary" value="注册帐号">
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+
+<!-- 修改密码 -->
+<div id="Modal_2" class="modal">
+<div class="modal-content">
+<div class="modal-header">
+<h3 class="header-title">修改密码</h3>
+<div class="close-btn"><img src="css/close_contact.png"></div>
+<h2>请不要将用户名和密码随意告诉他人!</h2>
+</div>
+<div class="modal-body">
+<div class="col-md col-md-offset">
+<form method="post" action="Result.php">
+<div class="row">
+<div class="col-md-12">
+<fieldset>
+<input type="text" class="form-control" placeholder="用户账号" name="login" maxlength="16" required />
+</fieldset>
+</div>
+<div class="col-md-12">
+<fieldset>
+<input type="password" class="form-control" placeholder="输入旧密码" name="pass" maxlength="28" required />
+</fieldset>
+</div>
+<div class="col-md-12">
+<fieldset>
+<input type="password" class="form-control" placeholder="输入新密码" name="pass1" maxlength="28" required />
+</fieldset>
+</div>
+<div class="col-md-12">
+<fieldset>
+<input type="password" class="form-control" placeholder="确认新密码" name="pass2" maxlength="28" required />
+</fieldset>
+</div>
+<div class="col-md-12">
+<fieldset>
+<input type="submit" name="Modify" class="primary" value="修改密码">
+</fieldset>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+
+<!-- 找回密码 -->
+<div id="Modal_3" class="modal">
+<div class="modal-content">
+<div class="modal-header">
+<h3 class="header-title">找回密码</h3>
+<div class="close-btn"><img src="css/close_contact.png"></div>
+<h2>请不要将电子邮件随意告诉他人!</h2>
+</div>
+<div class="modal-body">
+<div class="col-md col-md-offset">
+<form method="post" action="Result.php">
+<div class="row">
+<div class="col-md-12">
+<fieldset>
+<input type="text" class="form-control" placeholder="用户账号" name="login" maxlength="16" required />
+</fieldset>
+</div>
+<div class="col-md-12">
+<fieldset>
+<input type="password" class="form-control" class="form-control" placeholder="电子邮件" name="email" maxlength="28" required />
+</fieldset>
+</div>
+<div class="col-md-12">
+<fieldset>
+<input type="password" class="form-control" placeholder="输入新密码" name="pass1" maxlength="28" required />
+</fieldset>
+</div>
+<div class="col-md-12">
+<fieldset>
+<input type="password" class="form-control" placeholder="确认新密码" name="pass2" maxlength="28" required />
+</fieldset>
+</div>
+<div class="col-md-12">
+<fieldset>
+<input type="submit" name="Recovery" class="primary" value="找回密码">
+</fieldset>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+
+<!-- 下载中心 -->
+<div id="Modal_4" class="modal">
+<div class="modal-content">
+<div class="modal-header">
+<h3 class="header-title">下载中心</h3>
+<div class="close-btn"><img src="css/close_contact.png"></div>
+<h2>下载包括客户端,登录器,插件</h2>
+</div>
+<div class="modal-body">
+<div class="col-md col-md-offset">
+<div class="row">
+<input type="button" class="primary" value="客户端下载" onclick="window.open('/1.12.3.zip')" />
+<input type="button" class="primary" value="登录器下载" onclick="window.open('/dlq.zip')" />
+<input type="button" class="primary" value="插 件 下 载" onclick="window.open('/404.html')" />
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- 捐助我们 -->
+<div id="Modal_5" class="modal">
+<div class="modal-content">
+<div class="modal-header">
+<h3 class="header-title">捐助我们</h3>
+<div class="close-btn"><img src="css/close_contact.png"></div>
+<h2>捐助费用均用于服务器,网络租赁与维护,版本更新等费用!</h2>
+</div>
+<div class="modal-body">
+<div class="col-md col-md-offset">
+<div class="row">
+<input type="button" class="primary" value="我要捐助" onclick="window.open('http://new.shoukabao.cn/Payment/Service/f7d0a377e25752d45864657cccc1ebcb')" />
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- 免责声明 -->
+<div id="Modal_6" class="modal">
+<div class="modal-content">
+<div class="modal-header">
+<h3 class="header-title">免责声明</h3>
+<div class="close-btn"><img src="css/close_contact.png"></div>
+<h2></h2>
+</div>
+<div class="modal-body">
+<div class="col-md col-md-offset">
+<div class="row">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本服使用代码是基于国外 Github 开源项目 LightsHope，并在团队内部进行二次开发的系统。其本身内核是基于国际开源代码。其中所有代码均遵循GPL协议,对所有人开放！所有人可以获得该代码,并编译执行！技术团队均来自国内 Mangos 社区以研究魔兽世界模拟器技术的爱好者组织。我们仅为模拟器研究爱好者提供一个模拟游戏环境以研究开源的 C++,PHP,MYSQL 等技术,以学习为目的！我们希望每个朋友都以官方游戏为准，支持官方正版游戏！</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本服玩家赞助费用全部用于服务器,网络租赁与维护,版本更新等费用,本服完全没有任何赢利性商业行为。本站以及本服的所有资料及游戏中提到的所谓点券,充值等词汇实质为捐赠方式,并非商业用语所指的行为模式。我们支持和鼓励玩家在魔兽世界官方进行游戏,如果对任何个人，单位，团体，机关，企事业，单位等。产生冒犯或者侵害，请您立即告知我们，我们将改正模式。</p>
+<h2>敬请广大玩家以及所有关注藏宝海湾的用户注意。特此声明!</h2>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<section class="overlay-menu">
+<div class="container">
+<div class="row">
+<div class="main-menu">
+<ul>
+<li>
+<a id="Start_1" href="#">注册帐号</a>&nbsp;&nbsp;
+<a id="Start_2" href="#">修改密码</a>&nbsp;&nbsp;
+<a id="Start_3" href="#">找回密码</a>&nbsp;&nbsp;
+<a id="Start_4" href="#">下载中心</a>&nbsp;&nbsp;
+<a id="Start_5" href="#">捐助我们</a>&nbsp;&nbsp;
+<a id="Start_6" href="#">免责声明</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<script src="css/jquery.min.js"></script>
+<script src="css/main.js"></script>
+</body>
+</html>
